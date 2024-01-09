@@ -1,0 +1,21 @@
+<h1>Child Component</h1>
+<div class="left">
+  
+    <div class="con-top">
+
+      <div class="m-right" *ngFor="let item of dataSet">
+        <div *ngIf="item.userType == 0">
+          Parent:  {{item.message}}
+          </div>
+    
+          <div class="text-box-1" *ngIf="item.userType == 1">
+           You: {{item.message}}
+          </div>
+      </div>
+     </div>
+  
+     <div class="con-bottom">
+      <input type="text" placeholder="Enter message" class="message-text-box" #messageText1>
+      <button class="btn" (click)="addMessage(messageText1.value)">Send</button>
+     </div>
+  </div>

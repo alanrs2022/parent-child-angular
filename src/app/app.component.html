@@ -1,0 +1,24 @@
+<div class="main">
+  <div class="right">
+   <div class="con-top">
+
+    <div class="m-right" *ngFor="let item of dataSet">
+      <div *ngIf="item.userType == 0">
+       You: {{item.message}}
+      </div>
+
+      <div class="text-box-1" *ngIf="item.userType == 1">
+       Child: {{item.message}}
+      </div>
+      </div>
+   </div>
+
+   <div class="con-bottom">
+    <input type="text" placeholder="Enter message" class="message-text-box" #messageText0>
+    <button class="btn" (click)="addMessage(0)">Send</button>
+   </div>
+  </div>
+
+  <app-app-child [dataSet]="dataSet" (messageEvent)="addM($event)"></app-app-child>
+
+</div>
